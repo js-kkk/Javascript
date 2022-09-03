@@ -21,12 +21,16 @@
 
 <h1><a href="index.html">WEB</a></h1>
 <input type="button" value="night" onclick="
-  document.querySelector('body').style.backgroundColor='black';
-  document.querySelector('body').style.color='white';
-">
-<input type="button" value="day" onclick="
-  document.querySelector('body').style.backgroundColor='white';
-  document.querySelector('body').style.color='black';
+var target = document.querySelector('body');
+if(this.value === 'night'){
+  target.style.backgroundColor = 'black';
+  target.style.color = 'white';
+  this.value = 'day';
+} else {
+  target.style.backgroundColor = 'white';
+  target.style.color = 'black';
+  this.value = 'night';
+}
 ">
 <div id="grid">
 <ol>
@@ -52,11 +56,32 @@ and a variety of applications. The most popular runtime system for this usage is
 Although Java and JavaScript are similar in name, syntax, and respective standard libraries,
 the two languages are distinct and differ greatly in design.
 </p>
+<input type="button" value="night" onclick="
+if(this.value === 'night'){
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  this.value = 'day';
+} else {
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color = 'black';
+  this.value = 'night';
+}
+">
+<input type="button" value="night" onclick="
+if(this.value === 'night'){
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  this.value = 'day';
+} else {
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color = 'black';
+  this.value = 'night';
+}
+">
 </div>
 </div>
+
 <p>
-
-
 <div id="disqus_thread"></div>
 <script>
     /**
