@@ -3,6 +3,46 @@
 <head>
 <title>WEB1 - Welcome</title>
 <meta charset="utf-8">
+
+<script>
+
+var Body = {
+  setColor:function(color){
+    document.querySelector('body').style.color = color;
+  },
+  setBackgroundColor:function(color){
+    document.querySelector('body').style.backgroundColor = color;
+  }
+}
+var Links = {
+  setColor:function(color){
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i<alist.length){
+      alist[i].style.color = color;
+      i = i + 1;
+  }
+}
+}
+function night_DayHandler(self){
+  var target = document.querySelector('body');
+  if(self.value === 'night'){
+    Body.setBackgroundColor('black');
+    Body.setColor('white');
+    self.value = 'day';
+
+    Links.setColor('powderblue');
+
+  } else {
+    Body.setBackgroundColor('white');
+    Body.setColor('black');
+    self.value = 'night';
+
+    Links.setColor('blue');
+    }
+}
+</script>
+
 <link rel="stylesheet" href="style.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1W8DLETTW"></script>
@@ -17,6 +57,9 @@
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" onclick="
+    night_DayHandler(this);
+  ">
   <div id="grid">
   <ol>
     <li><a href="1.html">HTML</a></li>
